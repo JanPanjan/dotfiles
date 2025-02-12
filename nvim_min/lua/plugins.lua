@@ -16,6 +16,24 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local configs = require("nvim-treesitter.configs")
+
+			configs.setup({
+				ensure_installed = {
+					"c", "lua", "vim", "vimdoc", "html", "r", "python",
+					"java", "markdown", "markdown_inline", "rust"
+				},
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end
+	},
+
+	{
 		'nvim-neo-tree/neo-tree.nvim',
 		enabled = true,
 		lazy = true,
@@ -67,6 +85,9 @@ require('lazy').setup({
 					list_items = {
 						indent_size = 2,
 						shift_width = 2,
+						marker_minus = {
+							text = "●",
+						},
 					},
 					code_blocks = {
 						icons = "devicons",
@@ -255,24 +276,18 @@ require('lazy').setup({
 	},
 
 	{
-		'slugbyte/lackluster.nvim',
+		'loctvl842/monokai-pro.nvim',
 		config = function()
-			local lackluster = require('lackluster')
-			lackluster.setup({
-				tweak_syntax = {
-					comment = lackluster.color.gray4, -- or gray5
-				},
-				tweak_background = {
-					menu = lackluster.color.gray3,
-					popup = 'default',
-				},
+			require("monokai-pro").setup({
+				transparent_background = false,
+				filter = "machine",
+				background_clear = {
+					"nvim-tree",
+					"neo-tree"
+				}
 			})
 		end
 	},
-
-	{ 'loctvl842/monokai-pro.nvim' },
-
-	{ 'zenbones-theme/zenbones.nvim', dependencies = "rktjmp/lush.nvim", },
 
 	{
 		'joshuadanpeterson/typewriter',
@@ -286,21 +301,5 @@ require('lazy').setup({
 				enable_horizontal_scroll = false
 			})
 		end
-	},
-
-	{
-		"lervag/vimtex",
-		lazy = false,
-		init = function()
-			vim.g.vimtex_view_method = "zathura"
-			-- vim.g.maplocalleader = " "
-		end
-	},
-
-	{
-		'jbyuki/nabla.nvim',
-		keys = {
-			{ '<leader>p', function() require("nabla").popup() end, desc = "PLG: show nabla popup" }
-		},
 	},
 })

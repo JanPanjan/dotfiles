@@ -19,11 +19,16 @@ vim.lsp.config('pyright', {
 
 vim.lsp.config('clangd', {
 	cmd = { "clangd" },
-	root_markers = { "Makefile", },
+	root_markers = { "Makefile" },
 	filetypes = { "c" }
 })
 
 vim.lsp.config('marksman', {
 	cmd = { "marksman" },
 	filetypes = { "markdown" },
+})
+
+vim.lsp.config('R', {
+	cmd = { 'R', '--slave', '-e', 'languageserver::run()' },
+	filetypes = { 'r', 'rmd', 'rnoweb' }
 })

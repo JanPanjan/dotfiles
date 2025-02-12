@@ -1,21 +1,3 @@
-local statusline   = {
-	' %M',
-	'%=',
-	' %t',
-	'%=',
-	' %p%%',
-	' %l:%c '
-}
-vim.o.statusline   = table.concat(statusline, '')
-
--- local tabline = {
--- 	' %M',
--- 	' %t',
--- }
--- vim.o.tabline = table.concat(tabline, '')
-
-vim.opt.cursorline = true
-
 --[[
 Suggested color names (these are available on most systems):
 		Red		LightRed	DarkRed
@@ -164,23 +146,28 @@ WinBar		Window bar of current window.
 WinBarNC	Window bar of not-current windows.
 --]]
 
+-- Enables cursorline
+vim.opt.cursorline = true
+
 vim.api.nvim_create_user_command("DefaultDark", function()
 	vim.o.background = "dark"
 	vim.cmd.colorscheme('default')
-
+	local normal_bg = 'NvimDarkGray3'
 	vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'none', fg = 'NvimLightBlue' })
 	vim.api.nvim_set_hl(0, "ModeMsg", { bg = 'none', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
-	vim.api.nvim_set_hl(0, "Normal", { bg = 'NvimDarkGray3' })
-	vim.api.nvim_set_hl(0, "ZenBg", { bg = 'NvimDarkGray3' })
+	vim.api.nvim_set_hl(0, "Normal", { bg = normal_bg })
+	vim.api.nvim_set_hl(0, "ZenBg", { bg = normal_bg })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = 'NvimDarkGray2' })
+	vim.api.nvim_set_hl(0, "Special", { fg = 'NvimLightGray2' })
+	vim.api.nvim_set_hl(0, "Function", { fg = 'NvimLightBlue' })
+	vim.api.nvim_set_hl(0, "Statement", { fg = 'NvimLightGray2', bold = false })
 end, {})
 
 vim.api.nvim_create_user_command("DefaultLight", function()
 	vim.o.background = "light"
 	vim.cmd.colorscheme('default')
-
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'None', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "StatusLine", { fg = 'black', bg = 'NvimLightGray1' })
 	vim.api.nvim_set_hl(0, "ModeMsg", { bg = 'none', fg = 'NvimLightYellow' })
@@ -197,38 +184,48 @@ end, {})
 vim.api.nvim_create_user_command("QuietDark", function()
 	vim.o.background = "dark"
 	vim.cmd.colorscheme('quiet')
-
-	vim.api.nvim_set_hl(0, "Normal", { bg = 'NvimDarkGray1' })
-	vim.api.nvim_set_hl(0, "ZenBg", { bg = 'NvimDarkGray1' })
+	-- local normal_bg = 'NvimDarkGray1'
+	local normal_bg = 'NvimDarkGray1'
+	vim.api.nvim_set_hl(0, "Normal", { bg = normal_bg })
+	vim.api.nvim_set_hl(0, "ZenBg", { bg = normal_bg })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = 'NvimDarkGray3' })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'None', fg = 'white' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
 	vim.api.nvim_set_hl(0, "Visual", { bg = 'NvimDarkMagenta' })
-	vim.api.nvim_set_hl(0, "Pmenu", { bg = 'gray' })
+	vim.api.nvim_set_hl(0, "Function", { fg = 'NvimLightGray2' })
+	vim.api.nvim_set_hl(0, "Identifier", { fg = 'NvimLightGray3' })
+	vim.api.nvim_set_hl(0, "Special", { fg = 'NvimLightGray1' })
+	vim.api.nvim_set_hl(0, "Pmenu", { bg = 'gray', fg = 'NvimDarkGray1' })
 	vim.api.nvim_set_hl(0, "PmenuSel", { fg = 'white', bg = 'NvimDarkGray4' })
 	vim.api.nvim_set_hl(0, "PmenuSbar", { bg = 'NvimDarkGray1' })
 	vim.api.nvim_set_hl(0, "PmenuThumb", { bg = 'NvimDarkGray3' })
 end, {})
 
 vim.api.nvim_create_user_command("QuietLight", function()
+	green = 'NvimLightGreen'
+	red = 'NvimLightRed'
+	blue = 'NvimLightBlue'
 	vim.o.background = "light"
 	vim.cmd.colorscheme('quiet')
-
 	vim.api.nvim_set_hl(0, "Normal", { fg = 'black', bg = 'white' })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = 'NvimLightGray1' })
-	vim.api.nvim_set_hl(0, "TabLineFill", { bg = 'NvimLightGreen' })
-	vim.api.nvim_set_hl(0, "TabLineSel", { bg = 'NvimLightGreen', fg = 'black' })
-	-- vim.api.nvim_set_hl(0, "StatusLine", { bg = 'NvimLightGreen', fg = 'black' })
+	vim.api.nvim_set_hl(0, "TabLineFill", { bg = green })
+	vim.api.nvim_set_hl(0, "TabLineSel", { bg = green, fg = 'black' })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'NvimLightGray1', fg = 'black' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
-	vim.api.nvim_set_hl(0, "Visual", { bg = 'NvimLightGreen' })
-	vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'NvimDarkGreen' })
+	vim.api.nvim_set_hl(0, "Visual", { bg = green })
+
 	vim.api.nvim_set_hl(0, "Pmenu", { bg = 'NvimLightGray3' })
 	vim.api.nvim_set_hl(0, "PmenuSel", { fg = 'SeaGreen', bg = 'NvimLightGray2' })
 	vim.api.nvim_set_hl(0, "PmenuSbar", { bg = 'NvimDarkGreen' })
 	vim.api.nvim_set_hl(0, "PmenuThumb", { bg = 'green' })
 	vim.api.nvim_set_hl(0, "ZenBg", { bg = 'white' })
 end, {})
+
+-- vim.api.nvim_command('QuietLight')
+-- vim.cmd('QuietDark')
+-- vim.api.nvim_command('DefaultLight')
+vim.api.nvim_command('DefaultDark')
 
 vim.api.nvim_create_user_command("Invis", function()
 	vim.api.nvim_set_hl(0, "Normal", { bg = 'none' })
@@ -237,8 +234,6 @@ vim.api.nvim_create_user_command("Invis", function()
 	vim.api.nvim_set_hl(0, "ZenBg", { bg = 'none' })
 end, {})
 
+-- vim.cmd('Invis')
 
--- vim.api.nvim_command('QuietLight')
-vim.api.nvim_command('QuietDark')
--- vim.api.nvim_command('DefaultLight')
--- vim.api.nvim_command('DefaultDark')
+vim.cmd.colorscheme("monokai-pro-classic")

@@ -58,7 +58,7 @@ return {
 	-- [[ ENVIRONMENTS ]]
 
 	s({ trig = 'qq', regTrig = false, wordTrig = true, snippetType = 'autosnippet' },
-		{ t '\\ \\text{', i(1, ''), t '} \\ ', i(2, '') }),
+		{ t '\\text{', i(1, ''), t '}', i(2, '') }),
 	s({ trig = 'mk', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, fmta('$<>$', { i(1) })),
 	s({ trig = 'dm', regTrig = false, wordTrig = true, snippetType = 'autosnippet' },
 		fmta(

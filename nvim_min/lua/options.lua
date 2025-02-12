@@ -37,11 +37,11 @@ vim.opt.signcolumn     = 'no'
 vim.opt.showtabline    = 1
 
 -- Hides NeoVim mode in statusbar
-vim.opt.showmode       = false
+vim.opt.showmode       = true
 -- Use global status line
 vim.opt.laststatus     = 3
 -- command height
-vim.opt.ch             = 0
+vim.opt.ch             = 1
 
 -- Preffered split direction
 vim.opt.splitright     = true
