@@ -101,6 +101,25 @@ require('lazy').setup({
 	},
 
 	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end
+	},
+
+	{
+		'echasnovski/mini.nvim',
+		enabled = true,
+		lazy = false,
+		config = function()
+			require('mini.ai').setup { n_lines = 500 }
+			-- require('mini.surround').setup()
+			-- require('mini.pairs').setup()
+		end,
+	},
+
+	{
 		'L3MON4D3/LuaSnip',
 		enabled = true,
 		lazy = true,
@@ -135,23 +154,31 @@ require('lazy').setup({
 			local cmp = require 'cmp'
 			local luasnip = require 'luasnip'
 			local lspkind = require('lspkind')
+			local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 			-- Add VSCode Dark+ Theme Colors to the Menu
-			vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
-			vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg = 'NONE', fg = '#569CD6' })
-			vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpIntemAbbrMatch' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg = 'NONE', fg = '#9CDCFE' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link = 'CmpItemKindVariable' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindText', { link = 'CmpItemKindVariable' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg = 'NONE', fg = '#C586C0' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link = 'CmpItemKindFunction' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg = 'NONE', fg = '#D4D4D4' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
-			vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg = 'NONE', fg = '#569CD6' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpIntemAbbrMatch' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg = 'NONE', fg = '#9CDCFE' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link = 'CmpItemKindVariable' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindText', { link = 'CmpItemKindVariable' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg = 'NONE', fg = '#C586C0' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link = 'CmpItemKindFunction' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg = 'NONE', fg = '#D4D4D4' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
+			-- vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
+
+			-- If you want insert `(` after select function or method item
+			cmp.event:on(
+				'confirm_done',
+				cmp_autopairs.on_confirm_done()
+			)
 
 			cmp.setup {
 				performance = { max_view_entries = 20, },
 				completion = { completeopt = 'menu,menuone,preview,noselect' },
+
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -176,6 +203,10 @@ require('lazy').setup({
 							latex_symbols = "[Latex]",
 						})
 					}),
+				},
+
+				event = {
+					['confirm_done'] = cmp_autopairs.on_confirm_done(),
 				},
 
 				mapping = cmp.mapping.preset.insert {
@@ -249,20 +280,9 @@ require('lazy').setup({
 					}, {
 						{ name = 'cmdline' },
 					}),
-				})
+				}),
 			}
 		end
-	},
-
-	{
-		'echasnovski/mini.nvim',
-		enabled = true,
-		lazy = false,
-		config = function()
-			require('mini.ai').setup { n_lines = 500 }
-			require('mini.surround').setup()
-			require('mini.pairs').setup()
-		end,
 	},
 
 	{

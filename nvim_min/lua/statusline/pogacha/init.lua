@@ -1,15 +1,9 @@
--- local statusline   = {
--- 	' %M',
--- 	'%=',
--- 	' %t',
--- 	'%=',
--- 	' %p%%',
--- 	' %l:%c '
--- }
--- vim.o.statusline   = table.concat(statusline, '')
-
--- local tabline = {
--- 	' %M',
--- 	' %t',
--- }
--- vim.o.tabline = table.concat(tabline, '')
+local statusline = {
+	' %M',
+	'%=',
+	' %t',
+	'%=',
+	' %p%%',
+	' %l:%c '
+}
+vim.o.statusline = table.concat(statusline, '')

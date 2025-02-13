@@ -34,7 +34,7 @@ vim.o.numberwidth      = 4
 vim.opt.signcolumn     = 'no'
 
 -- Enables tabline
-vim.opt.showtabline    = 1
+vim.opt.showtabline    = 2
 
 -- Hides NeoVim mode in statusbar
 vim.opt.showmode       = true

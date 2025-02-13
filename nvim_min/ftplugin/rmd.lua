@@ -1,3 +1,2 @@
 vim.opt.tabstop = 2
 vim.lsp.enable("R")
-vim.api.nvim_exec2("Markview disable")

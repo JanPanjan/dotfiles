@@ -159,6 +159,7 @@ return {
 
 	s({ trig = 'sum', regTrig = false, wordTrig = true }, fmta('\\sum_{<>}^{<>} <>', { i(1), i(2), i(3) })),
 	s({ trig = 'fak', regTrig = false, wordTrig = true }, fmta('\\frac{<>}{<>} <>', { i(1), i(2), i(3) })),
+	s({ trig = 'xnn', regTrig = false, wordTrig = true }, { t('(x_n)_{n\\in \\mathbb{N}}') }),
 
 	s({
 			trig = 'fun',

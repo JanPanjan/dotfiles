@@ -149,12 +149,19 @@ WinBarNC	Window bar of not-current windows.
 -- Enables cursorline
 vim.opt.cursorline = true
 
+-- Sets custom tabline
+local tabline      = {
+	' %M',
+	' %t',
+}
+-- vim.o.tabline      = table.concat(tabline, '')
+
 vim.api.nvim_create_user_command("DefaultDark", function()
 	vim.o.background = "dark"
 	vim.cmd.colorscheme('default')
 	local normal_bg = 'NvimDarkGray3'
 	vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'NvimLightYellow' })
-	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'none', fg = 'NvimLightBlue' })
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'NvimDarkGray2', fg = 'NvimLightBlue' })
 	vim.api.nvim_set_hl(0, "ModeMsg", { bg = 'none', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
 	vim.api.nvim_set_hl(0, "Normal", { bg = normal_bg })
@@ -168,7 +175,6 @@ end, {})
 vim.api.nvim_create_user_command("DefaultLight", function()
 	vim.o.background = "light"
 	vim.cmd.colorscheme('default')
-	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'None', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "StatusLine", { fg = 'black', bg = 'NvimLightGray1' })
 	vim.api.nvim_set_hl(0, "ModeMsg", { bg = 'none', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
@@ -184,12 +190,11 @@ end, {})
 vim.api.nvim_create_user_command("QuietDark", function()
 	vim.o.background = "dark"
 	vim.cmd.colorscheme('quiet')
-	-- local normal_bg = 'NvimDarkGray1'
 	local normal_bg = 'NvimDarkGray1'
 	vim.api.nvim_set_hl(0, "Normal", { bg = normal_bg })
 	vim.api.nvim_set_hl(0, "ZenBg", { bg = normal_bg })
-	vim.api.nvim_set_hl(0, "CursorLine", { bg = 'NvimDarkGray3' })
-	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'None', fg = 'white' })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = 'NvimDarkGray2', fg = 'none' })
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'NvimDarkGray2', fg = 'white' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
 	vim.api.nvim_set_hl(0, "Visual", { bg = 'NvimDarkMagenta' })
 	vim.api.nvim_set_hl(0, "Function", { fg = 'NvimLightGray2' })
@@ -223,9 +228,9 @@ vim.api.nvim_create_user_command("QuietLight", function()
 end, {})
 
 -- vim.api.nvim_command('QuietLight')
--- vim.cmd('QuietDark')
+vim.cmd('QuietDark')
 -- vim.api.nvim_command('DefaultLight')
-vim.api.nvim_command('DefaultDark')
+-- vim.api.nvim_command('DefaultDark')
 
 vim.api.nvim_create_user_command("Invis", function()
 	vim.api.nvim_set_hl(0, "Normal", { bg = 'none' })
