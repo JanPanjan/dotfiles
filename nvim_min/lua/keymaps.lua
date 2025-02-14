@@ -1,5 +1,11 @@
 local map = function(mode, lhs, rhs, opts) vim.keymap.set(mode, lhs, rhs, opts) end
 
+map({ 'n', 't' }, '<leader>vs', 'V:s/',
+	{ desc = "PSN: enter substitute mode for current line", remap = true })
+
+map({ 'n', 't' }, '<leader>fs', ':%s/',
+	{ desc = "PSN: enter global substitute mode", remap = true })
+
 map({ 'n', 't' }, '<C-a>', '<cmd>tabp<CR>',
 	{ desc = "PSN: goto previous tab", remap = true })
 

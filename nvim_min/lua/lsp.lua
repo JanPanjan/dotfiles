@@ -21,9 +21,17 @@ vim.lsp.config('lua_ls', {
 		Lua = {
 			runtime = {
 				version = 'LuaJIT',
-			}
-		}
-	}
+			},
+			workspace = {
+				checkThirdParty = false,
+				library = {
+					"$VIMRUNTIME",
+					"$XDG_DATA_HOME/nvim/lazy",
+					"${3rd}/luv/library",
+				},
+			},
+		},
+	},
 })
 
 vim.lsp.config('pyright', {

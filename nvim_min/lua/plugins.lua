@@ -210,7 +210,6 @@ require('lazy').setup({
 				},
 
 				mapping = cmp.mapping.preset.insert {
-					-- suggestions
 					['<CR>'] = cmp.mapping.confirm { select = false },
 					['<Tab>'] = function(fallback)
 						if cmp.visible() then
@@ -228,11 +227,8 @@ require('lazy').setup({
 						end
 					end,
 
-					-- documentation
 					['<C-b>'] = cmp.mapping.scroll_docs(-4),
 					['<C-f>'] = cmp.mapping.scroll_docs(4),
-
-					-- snippet insert nodes
 					['<A-l>'] = cmp.mapping(function()
 						if luasnip.expand_or_locally_jumpable() then
 							luasnip.expand_or_jump()
