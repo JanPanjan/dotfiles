@@ -318,4 +318,8 @@ require('lazy').setup({
 			})
 		end
 	},
+
+	{ "rebelot/kanagawa.nvim" },
+
+	{ "sainnhe/gruvbox-material" },
 })

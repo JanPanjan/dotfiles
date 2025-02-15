@@ -1,0 +1,7 @@
+WRN 2025-02-09T02:34:55.979 nvim_configs-nvim_min.10540.0 vim_mktempdir:3279: $TMPDIR tempdir not a directory (or does not exist): $TMPDIR
+WRN 2025-02-09T04:24:33.552 nvim_configs-nvim_min.13368.0 vim_mktempdir:3279: $TMPDIR tempdir not a directory (or does not exist): $TMPDIR
+WRN 2025-02-09T04:27:17.138 nvim_configs-nvim_min.19988.0 vim_mktempdir:3279: $TMPDIR tempdir not a directory (or does not exist): $TMPDIR
+WRN 2025-02-10T11:20:06.185 nvim_configs-nvim_min.20140.0 vim_mktempdir:3279: $TMPDIR tempdir not a directory (or does not exist): $TMPDIR
+WRN 2025-02-10T11:20:19.000 nvim_configs-nvim_min.16520.0 vim_mktempdir:3279: $TMPDIR tempdir not a directory (or does not exist): $TMPDIR
+ERR 2025-02-11T17:42:41.758 nvim_configs-nvim_min.11404.0 os_conpty_set_size:173: ResizePseudoConsoel failed: error code: -4083
+WRN 2025-02-12T12:31:25.951 nvim_configs-nvim_min.21232.0 vim_mktempdir:3279: $TMPDIR tempdir not a directory (or does not exist): $TMPDIR
