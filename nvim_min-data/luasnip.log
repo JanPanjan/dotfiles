@@ -1,7 +1,0 @@
-WARN | 02:21:24 | main: Removing snippet typestruct: Error while updating dependents for snippet typestruct due to error ...min-data/lazy/LuaSnip/lua/luasnip/nodes/functionNode.lua:47: Refusing to update inside a snippet with invalid extmarks
-WARN | 02:38:34 | main: Removing snippet typedefst: Error while updating dependents for snippet typedefst due to error ...min-data/lazy/LuaSnip/lua/luasnip/nodes/functionNode.lua:47: Refusing to update inside a snippet with invalid extmarks
-WARN | 11:25:11 | main: Removing snippet typestruct: Error while updating dependents for snippet typestruct due to error ...min-data/lazy/LuaSnip/lua/luasnip/nodes/functionNode.lua:47: Refusing to update inside a snippet with invalid extmarks
-WARN | 11:28:35 | main: Removing snippet #ifndef: Error while updating dependents for snippet #ifndef due to error ...min-data/lazy/LuaSnip/lua/luasnip/nodes/functionNode.lua:47: Refusing to update inside a snippet with invalid extmarks
-WARN | 11:35:08 | main: Removing snippet typestruct: Error while updating dependents for snippet typestruct due to error ...min-data/lazy/LuaSnip/lua/luasnip/nodes/functionNode.lua:47: Refusing to update inside a snippet with invalid extmarks
-ERROR | 16:42:31 | lua-loader: Failed to execute
-      | : C:\Users\joene\AppData\Local\nvim_configs\nvim_min\lua\snippets\rmd.lua
