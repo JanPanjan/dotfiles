@@ -1,0 +1,80 @@
+[theme]
+theme = "native"
+[theme.overrides]
+separator = "  "
+end_separator = "  "
+start_separator = "  "
+idle_bg = "#101010"
+separator_bg = "#000000"
+
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "focused_window"
+[block.format]
+full = " $title.str(max_w:15) "
+short = " $title.str(max_w:10) "
+
+[[block]]
+block = "custom"
+cycle = ['echo "  ( ~-  _  -~˛ ) "', 'echo "  (  ×  __  ×  ) "']
+[[block.click]]
+button = "left"
+action = "cycle"
+
+[[block]]
+block = "sound"
+format = "  VOL {$volume.bar(w:10)}  "
+[[block.click]]
+button = "left"
+cmd = "pgrep -x \"pavucontrol\" && pkill -x \"pavucontrol\" || pavucontrol &"
+
+[[block]]
+block = "backlight"
+format = "  BRT {$brightness.bar(w:10)}  "
+
+[[block]]
+block = "hueshift"
+format = "  TMP ::  $temperature  "
+hue_shifter = "gammastep"
+step = 50
+click_temp = 3500
+
+[[block]]
+block = "custom"
+cycle = ["date +%H:%M:%S", "date +%d.%m.%Y"]
+interval = 1
+[[block.click]]
+button = "left"
+action = "cycle"
+
+[[block]]
+block = "net"
+format = " $icon  "
+[[block.click]]
+button = "left"
+cmd = "pgrep -x \"iwgtk\" && pkill -x \"iwgtk\" || iwgtk &"
+
+[[block]]
+block = "custom"
+command = "echo '\uf294'"
+[[block.click]]
+button = "left"
+cmd = "pgrep -x \"blueman-manager\" && pkill -x \"blueman-manager\" || blueman-manager"
+
+[[block]]
+block = "menu"
+text = "        \uf011        "
+[[block.items]]
+display = " -&gt;   Sleep   &lt;- "
+cmd = "systemctl suspend"
+[[block.items]]
+display = " -&gt; Power Off &lt;- "
+cmd = "poweroff"
+confirm_msg = "Are you sure you want to power off?"
+[[block.items]]
+display = " -&gt;  Reboot   &lt;- "
+cmd = "reboot"
+confirm_msg = "Are you sure you want to reboot?"
+

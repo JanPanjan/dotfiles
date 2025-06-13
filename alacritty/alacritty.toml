@@ -4,31 +4,32 @@ import = [
 # "~/.config/alacritty/themes/themes/everforest_dark.toml"
 # "~/.config/alacritty/themes/themes/blood_moon_custom.toml"
 # "~/.config/alacritty/themes/themes/blood_moon.toml"
-# "~/.config/alacritty/themes/themes/blood_moon_inverted.toml"
+
+"~/.config/alacritty/dark.toml"
+# "~/.config/alacritty/light.toml"
 ]
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Light"}
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold"}
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic"}
+
+# normal = { family = "FiraCode Nerd Font", style = "Light"}
+# bold = { family = "FiraCode Nerd Font", style = "Medium"}
+# italic = { family = "FiraCode Nerd Font", style = "Light Italic"}
+
+# normal = { family = "LiberationMono", style = "Light"}
+# bold = { family = "LiberationMono", style = "Medium"}
+# italic = { family = "LiberationMono", style = "Light Italic"}
+
+size = 13
 
 [colors]
 draw_bold_text_with_bright_colors = false
 
-[colors.primary]
-background = "0x000000"
-foreground = "0xffffff"
-
 [window]
 opacity = 1
 blur = true
-
-[font]
-# normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
-# bold = { family = "JetBrainsMono Nerd Font", style = "Bold"}
-# italic = { family = "JetBrainsMono Nerd Font", style = "Italic"}
-
-# normal = { family = "FiraCode Nerd Font", style = "Regular"}
-normal = { family = "FiraCode Nerd Font", style = "Light"}
-bold = { family = "FiraCode Nerd Font", style = "Medium"}
-italic = { family = "FiraCode Nerd Font", style = "Light Italic"}
-
-size = 14
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }

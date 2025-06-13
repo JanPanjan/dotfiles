@@ -1,0 +1,72 @@
+[theme]
+theme = "srcery"
+
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "focused_window"
+[block.format]
+full = " $title.str(max_w:15) "
+short = " $title.str(max_w:10) "
+
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:20) $play $next |}"
+player = "spotify"
+
+[[block]]
+block = "backlight"
+format = "$icon $brightness "
+
+[[block]]
+block = "hueshift"
+hue_shifter = "gammastep"
+step = 50
+click_temp = 3500
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "bluetooth"
+mac = "39:5B:83:08:11:30"
+disconnected_format = "$icon "
+format = "$icon $name $percentage "
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
+
+[[block]]
+block = "time"
+interval = 5
+format = " $timestamp.datetime(f:'%a %d/%m %R') "
+
+[[block]]
+block = "net"
+format = " $icon  $signal_strength $ssid $graph_down "
+
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents.eng(w:1) "
+format_alt = " $icon_swap $swap_free.eng(w:3,u:B,p:Mi)/$swap_total.eng(w:3,u:B,p:Mi)($swap_used_percents.eng(w:2)) "
+interval = 1
+warning_mem = 70
+critical_mem = 90
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "$barchart $utilization "
+format_alt = " $icon $frequency{ $boost|} "
+info_cpu = 20
+warning_cpu = 50
+critical_cpu = 90

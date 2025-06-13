@@ -1,0 +1,24 @@
+# light theme
+exec swaybg -i /home/pogacha/Pictures/wp/story-negative.png -m fill &
+
+bar {
+	# gaps 0
+	#    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    # status_command while date +'%d. %b %Y | %X'; do sleep 1; done
+
+    # status_padding 4
+    # workspace_buttons yes
+    # workspace_min_width 27
+
+    colors {
+        statusline #333333
+        background #eeeeee
+        active_workspace #888888 #dddddd #000000
+        focused_workspace #555555 #000000 #ffffff
+        inactive_workspace #888888 #dddddd #000000
+        urgent_workspace #ff0000 #ff0000 #ffffff
+    }
+}

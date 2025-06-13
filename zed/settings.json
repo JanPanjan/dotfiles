@@ -8,11 +8,13 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "vim_mode": true,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_weight": 200,
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "One Dark",
+    "light": "Gruvbox Dark Soft",
     "dark": "macOS Classic Dark2"
   },
   "icon_theme": "Material Icon Theme"
