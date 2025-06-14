@@ -4,8 +4,8 @@ theme = "native"
 separator = "  "
 end_separator = "  "
 start_separator = "  "
-idle_bg = "#101010"
-separator_bg = "#000000"
+idle_bg = "#acddcc"
+separator_bg = "#ffffff"
 
 [icons]
 icons = "awesome4"

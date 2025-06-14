@@ -23,7 +23,6 @@ set $menu "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --loca
 exec_always nm-applet &
 exec_always gammastep &
 exec_always otd-daemon &
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 ### Output configuration
 #
@@ -263,7 +262,8 @@ bar {
 
 	# status_command while date +'%d. %b %Y | %X'; do sleep 1; done
 	# status_command i3status-rs ~/.config/i3status-rust/full.toml
-	status_command i3status-rs ~/.config/i3status-rust/min.toml
+	# status_command i3status-rs ~/.config/i3status-rust/min.toml
+	status_command i3status-rs ~/.config/i3status-rust/cyan.toml
 
 	status_padding 0
 	workspace_buttons yes
