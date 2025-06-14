@@ -1,3 +1,6 @@
+#########
+# THEME #
+#########
 [theme]
 theme = "native"
 [theme.overrides]
@@ -5,7 +8,11 @@ separator = "  "
 end_separator = "  "
 start_separator = "  "
 idle_bg = "#101010"
+idle_fg = "#888888"
 separator_bg = "#000000"
+#########
+# THEME #
+#########
 
 [icons]
 icons = "awesome4"
@@ -18,17 +25,21 @@ short = " $title.str(max_w:10) "
 
 [[block]]
 block = "custom"
-cycle = ['echo "  ( ~-  _  -~˛ ) "', 'echo "  (  ×  __  ×  ) "']
+cycle = ['echo "  (  U  __  U  ) "']
 [[block.click]]
 button = "left"
 action = "cycle"
 
 [[block]]
 block = "sound"
-format = "  VOL {$volume.bar(w:10)}  "
+format = "  $icon  {$volume.bar(w:10) |}  "
+max_vol = 100
 [[block.click]]
 button = "left"
 cmd = "pgrep -x \"pavucontrol\" && pkill -x \"pavucontrol\" || pavucontrol &"
+# [[block.click]]
+# button = "right"
+# cmd = ""
 
 [[block]]
 block = "backlight"
@@ -36,9 +47,9 @@ format = "  BRT {$brightness.bar(w:10)}  "
 
 [[block]]
 block = "hueshift"
-format = "  TMP ::  $temperature  "
+format = "  TMP :: $temperature  "
 hue_shifter = "gammastep"
-step = 50
+step = 100
 click_temp = 3500
 
 [[block]]
@@ -68,7 +79,7 @@ block = "menu"
 text = "        \uf011        "
 [[block.items]]
 display = " -&gt;   Sleep   &lt;- "
-cmd = "systemctl suspend"
+cmd = "swaylock -f -i ~/Pictures/wp/lockscreen1.png"
 [[block.items]]
 display = " -&gt; Power Off &lt;- "
 cmd = "poweroff"

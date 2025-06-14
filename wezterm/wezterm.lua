@@ -9,11 +9,11 @@ end
 
 local function scheme_for_appearance(appearance)
 	-- if appearance:find 'Dark' then
-	-- return 'OneDark (Gogh)'
+	return 'OneDark (Gogh)'
 	-- else
-	return 'One Light (Gogh)'
+	-- return 'One Light (Gogh)'
+	-- return 'Ayu Light (Gogh)'
 	-- end
-	-- return 'OneDark (Gogh)'
 end
 
 local config = wezterm.config_builder()
