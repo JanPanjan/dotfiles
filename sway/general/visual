@@ -1,0 +1,16 @@
+default_border pixel 30
+default_floating_border none
+gaps inner 0
+gaps outer 0
+
+# disable gaps when only one window is on the screen
+smart_gaps off
+
+# get app_id's: `swaymsg -t get_tree`
+# for_window [app_id="Thunar"]        floating enable, resize set 900 700, focus
+# i3status bar popups
+for_window [app_id="pavucontrol"]     floating enable, move position 1000 3, focus
+for_window [app_id="iwgtk"]           floating enable, resize set 300 400, move position 1400 3, focus
+for_window [app_id="blueman-manager"] floating enable, resize set 300 400, move position 1311 3, focus
+
+# vim:set ft=conf

@@ -1,0 +1,24 @@
+### Resizing containers:
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $mod+$left resize shrink width 10px
+    bindsym $mod+$down resize grow height 10px
+    bindsym $mod+$up resize shrink height 10px
+    bindsym $mod+$right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym $mod+Left resize shrink width 10px
+    bindsym $mod+Down resize grow height 10px
+    bindsym $mod+Up resize shrink height 10px
+    bindsym $mod+Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+shift+r mode "resize"
+
+# vim:set ft=conf

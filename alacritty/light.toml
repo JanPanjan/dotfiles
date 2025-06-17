@@ -1,6 +1,7 @@
-[colors.primary]
-background = "0xffffff"
-foreground = "0x000000"
+[general]
+import = [
+"~/.config/alacritty/themes/themes/one_light.toml"
+]
 
 [font]
 # normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}

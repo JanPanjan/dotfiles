@@ -3,10 +3,7 @@ exec_always gammastep &
 exec_always otd-daemon &
 
 include general/globals
-include general/misc
-include general/binds
-include general/visual
-include general/modes
+include general/*
 
 ## edit this with sed
 include theme/light

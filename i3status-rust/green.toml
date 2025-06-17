@@ -7,9 +7,8 @@ theme = "native"
 separator = "  "
 end_separator = "  "
 start_separator = "  "
-idle_bg = "#101010"
-idle_fg = "#888888"
-separator_bg = "#000000"
+idle_bg = "#acddaa"
+separator_bg = "#ffffff"
 #########
 # THEME #
 #########

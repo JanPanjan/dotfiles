@@ -1,0 +1,17 @@
+set {
+    # Logo key. Use Mod1 for Alt.
+    $mod Mod1
+
+    # Home row direction keys, like vim
+    $left h
+    $down j
+    $up k
+    $right l
+
+    $term alacritty
+    $browser firefox
+    $filemanager thunar
+    $menu "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=center"
+}
+
+# vim:set ft=conf

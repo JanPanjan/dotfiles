@@ -74,16 +74,26 @@ button = "left"
 cmd = "pgrep -x \"blueman-manager\" && pkill -x \"blueman-manager\" || blueman-manager"
 
 [[block]]
+block = "pomodoro"
+format = "  {$message|pomodoro } "
+notify_cmd = "swaynag -m '{msg}'"
+
+[[block]]
 block = "menu"
-text = "        \uf011        "
+text = "    \uf011    "
 [[block.items]]
-display = " -&gt;   Sleep   &lt;- "
+display = "  Sleep  "
 cmd = "systemctl suspend"
 [[block.items]]
-display = " -&gt; Power Off &lt;- "
+display = "  Power  "
 cmd = "poweroff"
 confirm_msg = "Are you sure you want to power off?"
 [[block.items]]
-display = " -&gt;  Reboot   &lt;- "
+display = "  Reboot "
 cmd = "reboot"
 confirm_msg = "Are you sure you want to reboot?"
+
+[[block]]
+block = "custom"
+command = "echo $(/usr/bin/cat /sys/class/power_supply/BAT0/capacity) %"
+

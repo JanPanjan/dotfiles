@@ -1,13 +1,10 @@
 [general]
-import = [
-# "~/.config/alacritty/themes/themes/hyper.toml"
-# "~/.config/alacritty/themes/themes/everforest_dark.toml"
-# "~/.config/alacritty/themes/themes/blood_moon_custom.toml"
-# "~/.config/alacritty/themes/themes/blood_moon.toml"
+### edit this with sed
+import = [ "light.toml" ]
+### edit this with sed
 
-"~/.config/alacritty/dark.toml"
-# "~/.config/alacritty/light.toml"
-]
+[colors]
+draw_bold_text_with_bright_colors = false
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Light"}
@@ -24,12 +21,9 @@ italic = { family = "JetBrainsMono Nerd Font", style = "Italic"}
 
 size = 13
 
-[colors]
-draw_bold_text_with_bright_colors = false
-
 [window]
 opacity = 1
-blur = true
+blur = false
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }
