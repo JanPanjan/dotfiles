@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+term_config="$HOME/.config/alacritty/alacritty.toml"
+sway_config="$HOME/.config/sway/config"
+
+select_theme(){
+    echo -e "dark\nlight" | wofi -p "Select theme" --show dmenu
+}
+
+chosen=$(select_theme) || exit 1
+
+echo "Changing to $chosen theme"
+
+if [[ -e "$sway_config" ]]; then
+    # change bar
+    sed -i -e "s#theme/.*#theme/$chosen#" "$sway_config"
+    swaymsg reload
+
+    # change wallpaper
+    if [[ "dark" == $chosen ]]; then
+        swaybg -i ~/.config/sway/wp/story.png -m fill &
+    else
+        swaybg -i ~/.config/sway/wp/story-negative.png -m fill &
+    fi
+
+    echo "Sway config updated."
+fi
+
+if [[ -e "$term_config" ]]; then
+    # switch toml files
+    sed -i -e "s/\"[^\"]*\.toml\"/\"$chosen.toml\"/" "$term_config"
+
+    echo "Alacritty config updated."
+fi
+
+echo "Theme changed."
+
+exit 0

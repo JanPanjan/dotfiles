@@ -1,0 +1,34 @@
+# set $main "#acddcc"
+set $main "#acddaa"
+# set $dim "#7cad9c"
+set $dim "#ffffff"
+
+# class                 border, bg text,       indicator, child-border
+client.focused          $main   $main    $main $main      $main
+client.unfocused        $dim    $dim     $dim  $dim       $dim
+client.focused_inactive $dim    $dim     $dim  $dim       $dim
+
+bar {
+	gaps 2
+	position top
+	font pango:JetBrainsMono Nerd Font 10
+
+	# status_command i3status-rs ~/.config/i3status-rust/cyan.toml
+	status_command i3status-rs ~/.config/i3status-rust/green.toml
+
+	status_padding 5
+	workspace_buttons yes
+	workspace_min_width 30
+
+	colors {
+        statusline #333333
+        background #ffffff
+		focused_workspace  $main $main #333333
+		# inactive_workspace #ffffff #ffffff #7cad9c
+		inactive_workspace #ffffff #ffffff #bcbdba
+		urgent_workspace   #70f0f0 #ff0000 #ffffff
+	}
+}
+
+exec "swaybg -i ~/.config/sway/wp/story-negative.png -m fill &"
+# vim:set ft=conf
