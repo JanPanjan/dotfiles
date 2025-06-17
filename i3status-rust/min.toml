@@ -25,7 +25,7 @@ short = " $title.str(max_w:10) "
 
 [[block]]
 block = "custom"
-cycle = ['echo "  ( ~-  _  -~˛ ) "']
+cycle = ['echo "  (  ×  _  ×  ) "']
 [[block.click]]
 button = "left"
 action = "cycle"

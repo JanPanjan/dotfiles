@@ -4,12 +4,11 @@ output HDMI-A-1 pos 1920 0 res 1920x1080
 output eDP1 pos 0 0 res 1920x1080
 
 ### Idle configuration
-### edit this with sed
+### NOTE: edit this with sed
 exec swayidle -w \
-         timeout 1000 'swaylock -f -i ~/.config/sway/wp/lockscreen-light.png' \
+         timeout 1000 'swaylock -f -i ~/.config/sway/wp/lockscreen-dark.png' \
          timeout 1500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -i ~/.config/sway/wp/lockscreen-light.png'
-### edit this with sed
+         before-sleep 'swaylock -f -i ~/.config/sway/wp/lockscreen-dark.png'
 
 ### Input configuration
 # names of your inputs: `swaymsg -t get_inputs`
