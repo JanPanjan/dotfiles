@@ -83,7 +83,7 @@ block = "menu"
 text = "    \uf011    "
 [[block.items]]
 display = "  Sleep  "
-cmd = "systemctl suspend"
+cmd = "systemctl suspend && swaylock -f -i ~/.config/sway/wp/lockscreen-light.png"
 [[block.items]]
 display = "  Power  "
 cmd = "poweroff"

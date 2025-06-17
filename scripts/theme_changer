@@ -9,32 +9,23 @@ select_theme(){
 
 chosen=$(select_theme) || exit 1
 
-echo "Changing to $chosen theme"
+echo "Changing to :: $chosen"
 
-# change bar, workspace and client colors
-[[ -e "$sway_config/config" ]] && \
-    sed -i -e "s#theme/.*#theme/$chosen#" "$sway_config/config"  && \
-    swaymsg reload
+echo "Updating sway config..."
+[[ -e "$sway_config/config" ]] && sed -i -e "s#theme/.*#theme/$chosen#" "$sway_config/config"  && \
 
-# change lockscreen
-[[ -e "$sway_config/general/misc" ]] && \
-    sed -i -e "s#lockscreen-.*\.png#lockscreen-$chosen\.png#" "$sway_config/general/misc"
+echo "Updating lockscreen..."
+[[ -e "$sway_config/general/misc" ]] && sed -i -e "s#lockscreen-.*\.png#lockscreen-$chosen\.png#" "$sway_config/general/misc"
 
-# change wallpaper
-if [[ "dark" == $chosen ]]; then
-    pkill swaybg && swaybg -i ~/.config/sway/wp/story.png -m fill &
-else
-    pkill swaybg && swaybg -i ~/.config/sway/wp/story-negative.png -m fill &
-fi
+echo "Updating wallpaper..."
+wp="$sway_config/wp/story-$chosen.png"
+[[ -e $wp ]] && pkill swaybg && swaybg -i "$wp" -m fill &
 
-echo "Sway config updated."
+echo "Updating alacritty config..."
+[[ -e "$term_config" ]] && sed -i -e "s/\"[^\"]*\.toml\"/\"$chosen.toml\"/" "$term_config"
 
-if [[ -e "$term_config" ]]; then
-    # switch toml files
-    sed -i -e "s/\"[^\"]*\.toml\"/\"$chosen.toml\"/" "$term_config"
-fi
+swaymsg reload
 
-echo "Alacritty config updated."
 echo "Theme changed."
 
 exit 0

@@ -4,7 +4,8 @@ import = [
 ]
 
 [colors.primary]
-background = "0x1f2329"
+# background = "0x1f2329"
+background = "0x000000"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
