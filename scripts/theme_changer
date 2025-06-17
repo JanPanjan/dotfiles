@@ -12,7 +12,7 @@ chosen=$(select_theme) || exit 1
 echo "Changing to $chosen theme"
 
 if [[ -e "$sway_config" ]]; then
-    # change bar
+    # change bar, workspace and client colors
     sed -i -e "s#theme/.*#theme/$chosen#" "$sway_config"
     swaymsg reload
 
