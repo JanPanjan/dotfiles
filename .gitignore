@@ -23,6 +23,9 @@ alacritty/themes
 !/scripts/
 !/scripts/**
 
+!/screenshots/
+!/screenshots/**
+
 !/sway/
 !/sway/**
 

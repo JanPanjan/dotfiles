@@ -6,7 +6,7 @@ include general/globals
 include general/*
 
 ## edit this with sed
-include theme/light
+include theme/dark
 ## edit this with sed
 
 include /etc/sway/config.d/*
