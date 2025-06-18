@@ -2,6 +2,7 @@
 
 term_config="$HOME/.config/alacritty/alacritty.toml"
 sway_config="$HOME/.config/sway"
+nvim_config="$HOME/.config/nvim/lua/theming.lua"
 
 select_theme(){
     echo -e "dark\nlight" | wofi -p "Select theme" --show dmenu
@@ -21,11 +22,21 @@ echo "Updating wallpaper..."
 wp="$sway_config/wp/story-$chosen.png"
 [[ -e $wp ]] && pkill swaybg && swaybg -i "$wp" -m fill &
 
+echo "Updating neovim config..."
+dark_theme="QuietDark"
+light_theme="Rosemarry"
+
+if [[ $chosen == "dark" ]]; then
+    [[ -e "$nvim_config" ]] && sed -i -e "s#vim\.api\.nvim_command.*#vim\.api\.nvim_command\('$dark_theme'\)#" "$nvim_config"
+else
+    [[ -e "$nvim_config" ]] && sed -i -e "s#vim\.api\.nvim_command.*#vim\.api\.nvim_command\('$light_theme'\)#" "$nvim_config"
+fi
+
 echo "Updating alacritty config..."
 [[ -e "$term_config" ]] && sed -i -e "s/\"[^\"]*\.toml\"/\"$chosen.toml\"/" "$term_config"
 
 swaymsg reload
 
-echo "Theme changed."
+echo "\nTheme changed."
 
 exit 0
