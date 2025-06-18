@@ -1,7 +1,10 @@
 [general]
 import = [
-"~/.config/alacritty/themes/themes/one_light.toml"
+"~/.config/alacritty/themes/themes/gruvbox_light.toml"
 ]
+
+[colors.primary]
+background = "0xffffff"
 
 [font]
 # normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}

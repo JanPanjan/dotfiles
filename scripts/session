@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# session je v tem primeru samo nabor programov, ki jih hočem odprte za delo
+# sessions so definirani v `sessions` direktoriju
+# program me prompta za session in zažene pravi script
+# primitivno.
+
+chosen_session=""
+
+prompt="\nIzberi session:\n (1) Analiza 3\n (2) Sistemska biologija\n (3) Strojno učenje - projekt"
+
+read stdin -p $prompt -s $default_session
+
+echo "$chosen_session"
