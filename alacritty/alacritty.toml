@@ -1,6 +1,6 @@
 [general]
 ### edit this with sed
-import = [ "dark.toml" ]
+import = [ "light.toml" ]
 ### edit this with sed
 
 [colors]

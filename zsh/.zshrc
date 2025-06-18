@@ -59,10 +59,10 @@ text_light="#333333"
 text_dark="#aaaaaa"
 
 ### this is what sed will change
-cur_main1=$a_dark
-cur_main2=$b_dark
-cur_main3=$c_dark
-cur_text=$text_dark
+cur_main1=$a_light
+cur_main2=$b_light
+cur_main3=$c_light
+cur_text=$text_light
 
 PROMPT="${NEWLINE}%K{$cur_main1}%F{$cur_text} $0 %K{$cur_main2}%F{$cur_text} %n %K{$cur_main3}%F{$cur_text} %~ %f%k ${sign} "
 # PROMPT="%F{magenta}%n@%m %F{cyan}%~%f${NEWLINE}%F{magenta}-${sign}%f "
