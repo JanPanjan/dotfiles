@@ -25,10 +25,17 @@ short = " $title.str(max_w:10) "
 
 [[block]]
 block = "custom"
-cycle = ['echo "  (  ×  _  ×  ) "']
+command = "echo '  (  ×  _  ×  )  '"
 [[block.click]]
 button = "left"
-action = "cycle"
+cmd = "~/.config/scripts/theme_changer"
+
+[[block]]
+block = "custom"
+command = "echo '\uf294'"
+[[block.click]]
+button = "left"
+cmd = "pgrep -x \"blueman-manager\" && pkill -x \"blueman-manager\" || blueman-manager"
 
 [[block]]
 block = "sound"
@@ -37,9 +44,6 @@ max_vol = 100
 [[block.click]]
 button = "left"
 cmd = "pgrep -x \"pavucontrol\" && pkill -x \"pavucontrol\" || pavucontrol &"
-# [[block.click]]
-# button = "right"
-# cmd = ""
 
 [[block]]
 block = "backlight"
