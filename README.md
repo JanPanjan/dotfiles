@@ -1,5 +1,5 @@
-![dark0](/screenshots/desktop0.png)
-![dark1](/screenshots/desktop3.png)
+![dark0](/screenshots/nier0.png)
+![dark1](/screenshots/nier1.png)
 
 <details>
 <summary><b>flashbang</b></summary>
