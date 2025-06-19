@@ -8,7 +8,7 @@ client.unfocused        $dim    $dim    $dim    $dim    $dim
 client.focused_inactive $dim    $dim    $dim    $dim    $dim
 
 bar {
-	gaps 2
+	gaps 5
 	position top
 	font pango:JetBrainsMono Nerd Font 10
 
@@ -25,5 +25,5 @@ bar {
 	}
 }
 
-exec "swaybg -i ~/.config/sway/wp/story.png -m fill &"
+exec "swaybg -i ~/.config/sway/wp/nier-water-mono.jpg &"
 # vim:set ft=conf

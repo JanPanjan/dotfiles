@@ -5,31 +5,39 @@ sway_config="$HOME/.config/sway"
 nvim_config="$HOME/.config/nvim/lua/theming.lua"
 shell_config="$HOME/.config/zsh/.zshrc"
 
+wp_dark="$sway_config/wp/nier-water-mono.png"
+wp_light="$sway_config/wp/nier-bridge.png"
+nvim_dark="QuietDark"
+nvim_light="Rosemarry"
+
 select_theme(){
     echo -e "dark\nlight" | wofi -p "Select theme" --show dmenu
 }
 
 chosen=$(select_theme) || exit 1
-
 echo "Changing to :: $chosen"
 
 echo "Updating sway config..."
 [[ -e "$sway_config/config" ]] && sed -i -e "s#theme/.*#theme/$chosen#" "$sway_config/config"  && \
 
 echo "Updating lockscreen..."
+# NOTE: does not work currently
 [[ -e "$sway_config/general/misc" ]] && sed -i -e "s#lockscreen-.*\.png#lockscreen-$chosen\.png#" "$sway_config/general/misc"
 
+swaymsg reload
+
 echo "Updating wallpaper..."
-wp="$sway_config/wp/story-$chosen.png"
-[[ -e $wp ]] && pkill swaybg && swaybg -i "$wp" -m fill &
+if [[ "dark" == "$chosen" ]] && [[ -e $wp ]]; then
+    pkill swaybg && swaybg -i "$wp_dark" -m fill &
+else
+    pkill swaybg && swaybg -i "$wp_light" -m fill &
+fi
 
 echo "Updating neovim config..."
-dark_theme="QuietDark"
-light_theme="Rosemarry"
 if [[ $chosen == "dark" ]]; then
-    [[ -e "$nvim_config" ]] && sed -i -e "s#vim\.api\.nvim_command.*#vim\.api\.nvim_command\('$dark_theme'\)#" "$nvim_config"
+    [[ -e "$nvim_config" ]] && sed -i -e "s#vim\.api\.nvim_command.*#vim\.api\.nvim_command\('$nvim_dark'\)#" "$nvim_config"
 else
-    [[ -e "$nvim_config" ]] && sed -i -e "s#vim\.api\.nvim_command.*#vim\.api\.nvim_command\('$light_theme'\)#" "$nvim_config"
+    [[ -e "$nvim_config" ]] && sed -i -e "s#vim\.api\.nvim_command.*#vim\.api\.nvim_command\('$nvim_light'\)#" "$nvim_config"
 fi
 
 echo "Updating shell prompt..."
@@ -41,8 +49,6 @@ echo "Updating shell prompt..."
 
 echo "Updating alacritty config..."
 [[ -e "$term_config" ]] && sed -i -e "s/\"[^\"]*\.toml\"/\"$chosen.toml\"/" "$term_config"
-
-swaymsg reload
 
 echo "\nTheme changed."
 

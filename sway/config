@@ -1,6 +1,7 @@
 exec_always nm-applet &
 exec_always gammastep &
 exec_always otd-daemon &
+exec_always i3a-master-stack --stack dwm &
 
 include general/globals
 include general/*

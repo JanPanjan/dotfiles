@@ -1,10 +1,15 @@
-default_border pixel 3
+default_border none
+titlebar_separator enable
 default_floating_border none
-gaps inner 10
-gaps outer 15
+gaps outer 3
+gaps inner 5
 
 # disable gaps when only one window is on the screen
 smart_gaps off
+
+blur enable
+blur_passes 1
+default_dim_inactive 0.2
 
 # get app_id's: `swaymsg -t get_tree`
 for_window [app_id="thunar"]          floating enable, resize set 900 600, move position 540 195, focus

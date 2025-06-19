@@ -22,8 +22,8 @@ italic = { family = "JetBrainsMono Nerd Font", style = "Italic"}
 size = 13
 
 [window]
-opacity = 1
-blur = false
+opacity = 0.8
+blur = true
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }

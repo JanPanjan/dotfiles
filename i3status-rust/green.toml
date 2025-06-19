@@ -23,10 +23,13 @@ full = " $title.str(max_w:15) "
 short = " $title.str(max_w:10) "
 
 [[block]]
-block = "custom"
+block = "menu"
 command = 'echo "  ( ~-  _  -~˛ ) "'
-[[block.click]]
-button = "left"
+[[block.items]]
+display = "  toggle gaps  "
+cmd = "~/.config/scripts/theme_changer"
+[[block.items]]
+display = "  change theme "
 cmd = "~/.config/scripts/theme_changer"
 
 [[block]]
