@@ -24,7 +24,7 @@ short = " $title.str(max_w:10) "
 
 [[block]]
 block = "menu"
-command = 'echo "  ( ~-  _  -~˛ ) "'
+text = '  ( ~-  _  -~˛ ) '
 [[block.items]]
 display = "  toggle gaps  "
 cmd = "~/.config/scripts/theme_changer"

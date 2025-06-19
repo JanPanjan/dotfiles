@@ -1,15 +1,14 @@
-default_border none
+default_border pixel 1
 titlebar_separator enable
 default_floating_border none
-gaps outer 2
-gaps inner 3
+gaps outer 0
+gaps inner 10
 
 # disable gaps when only one window is on the screen
-smart_gaps off
+smart_gaps on
 
 blur enable
-blur_passes 1
-default_dim_inactive 0.2
+default_dim_inactive 0.0
 
 # get app_id's: `swaymsg -t get_tree`
 for_window [app_id="thunar"]          floating enable, resize set 900 600, move position 540 195, focus
@@ -17,5 +16,8 @@ for_window [app_id="thunar"]          floating enable, resize set 900 600, move 
 for_window [app_id="pavucontrol"]     floating enable, move position 1000 3, focus
 for_window [app_id="iwgtk"]           floating enable, resize set 300 400, move position 1400 3, focus
 for_window [app_id="blueman-manager"] floating enable, resize set 300 400, move position 1311 3, focus
+
+# for_window [app_id=".*"] floating enable
+# for_window [app_id=".*"] border normal
 
 # vim:set ft=conf

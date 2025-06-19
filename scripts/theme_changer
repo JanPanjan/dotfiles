@@ -11,7 +11,7 @@ nvim_dark="QuietDark"
 nvim_light="Rosemarry"
 
 select_theme(){
-    echo -e "dark\nlight" | wofi -p "Select theme" --show dmenu
+    echo -e "dark\nlight" | wofi -p "Select theme" --show dmenu --width 40 --lines 5
 }
 
 chosen=$(select_theme) || exit 1
@@ -53,3 +53,4 @@ echo "Updating alacritty config..."
 echo "\nTheme changed."
 
 exit 0
+vim:set ft=sh

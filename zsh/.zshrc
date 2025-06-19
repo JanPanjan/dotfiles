@@ -23,6 +23,7 @@ alias cfg='nvim ~/.config'
 alias faks='cd ~/progAAAAAAA/faks'
 alias dev='cd ~/progAAAAAAA/dev'
 alias art='cd ~/progAAAAAAA/art'
+alias alw='git commit --allow-empty-message'
 
 # Zsh does not need explicit color variables like Bash for basic colors.
 # $0: shell

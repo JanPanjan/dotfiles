@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+sway_config="$HOME/.config/sway/general/visual"
+term_config="$HOME/.config/alacritty/alacritty.toml"
+
+select_opt(){
+    echo -e "enable\ndisable" | wofi -p "Blur" --show dmenu --width 40 --lines 5
+}
+
+chosen=$(select_opt) || exit 1
+
+echo "Updating sway config..."
+[[ -e "$sway_config" ]] && sed -i -e "s/blur.*/blur $chosen/" "$sway_config"
+if [[ "enable" == $chosen ]]; then
+    sed -i -e "s/default_dim_inactive.*/default_dim_inactive 0.1/" "$sway_config"
+else
+    sed -i -e "s/default_dim_inactive.*/default_dim_inactive 0.0/" "$sway_config"
+fi
+
+swaymsg reload
+
+if [[ -e "$term_config" ]] && [[ "enable" == $chosen ]]; then
+    sed -i -e "s/opacity.*/opacity = 0.6/" "$term_config"
+else
+    sed -i -e "s/opacity.*/opacity = 1.0/" "$term_config"
+fi
+
+exit 0
+
+vim:set ft=sh

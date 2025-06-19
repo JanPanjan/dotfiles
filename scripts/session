@@ -11,3 +11,4 @@ prompt="\nIzberi session:\n (1) Analiza 3\n (2) Sistemska biologija\n (3) Strojn
 read stdin -p $prompt -s $default_session
 
 echo "$chosen_session"
+vim:set ft=sh

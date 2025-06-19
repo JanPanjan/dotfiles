@@ -1,29 +1,31 @@
-set $main "#252525"
+# set $main "#252525"
+set $main "#9a9f8f"
 # set $dim "#303030"
 set $dim "#000000"
 
-# class                 border, bg text,       indicator,child-border
+# class                border, bg-text,     indicator,child-border
 client.focused          $main   $main   $main   $main   $main
 client.unfocused        $dim    $dim    $dim    $dim    $dim
 client.focused_inactive $dim    $dim    $dim    $dim    $dim
 
 bar {
-	gaps 5
-	position top
 	font pango:JetBrainsMono Nerd Font 10
-
 	status_command i3status-rs ~/.config/i3status-rust/min.toml
+
+	gaps 0
+	position top
 
 	status_padding 5
 	workspace_buttons yes
 	workspace_min_width 30
 
 	colors {
-		focused_workspace $main $main #999999
+		focused_workspace  #000000 #000000 $main
 		inactive_workspace #000000 #000000 #505050
 		urgent_workspace #ff0000 #ff0000 #ffffff
 	}
 }
 
-exec "swaybg -i ~/.config/sway/wp/nier-water-mono.jpg &"
+# exec "swaybg -i ~/.config/sway/wp/nier-water-mono.jpg &"
+exec "swaybg -i ~/.config/sway/wp/nier-bridge.jpg -m fill &"
 # vim:set ft=conf

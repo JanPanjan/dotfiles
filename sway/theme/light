@@ -30,5 +30,5 @@ bar {
 	}
 }
 
-exec "swaybg -i ~/.config/sway/wp/nier-bridge.png -m fill &"
+exec "swaybg -i ~/.config/sway/wp/nier-bridge.jpg -m fill &"
 # vim:set ft=conf
