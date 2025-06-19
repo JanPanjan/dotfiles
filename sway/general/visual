@@ -1,8 +1,8 @@
 default_border none
 titlebar_separator enable
 default_floating_border none
-gaps outer 3
-gaps inner 5
+gaps outer 2
+gaps inner 3
 
 # disable gaps when only one window is on the screen
 smart_gaps off
